@@ -11,7 +11,7 @@
       return 'badge badge-info';
     },
     focusClass: 'focus',
-    itemValue: function(item) {
+    itemValue: function(item) {``
       return item ? item.toString() : item;
     },
     itemText: function(item) {
