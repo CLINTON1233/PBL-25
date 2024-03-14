@@ -2,10 +2,10 @@
 
 include('../conf/config.php');
 
-$nama = $_POST['namaLengkap'];
-$nohp = $_POST['noHp'];
-$username = $_POST['email'];
-$password = $_POST['pass'];
+$nama = isset($_POST['namaLengkap']) ? $_POST['namaLengkap'] : '';
+$nohp = isset($_POST['noHp']) ? $_POST['noHp'] : '';
+$username = isset($_POST['email']) ? $_POST['email'] : '';
+$password = isset($_POST['pass']) ? $_POST['pass'] : '';
 
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
@@ -24,12 +24,16 @@ function generateUniqueID()
 
 $uniqueID = generateUniqueID();
 
-$query = mysqli_query($koneksi, "INSERT INTO tb_users VALUES ('','$uniqueID','$username','$hashedPassword','$nama','default.png','Online',current_timestamp())");
+$stmt = $koneksi->prepare("INSERT INTO tb_users VALUES ('', ?, ?, ?, ?, 'default.png', 'Online', current_timestamp())");
+$stmt->bind_param('ssss', $uniqueID, $username, $hashedPassword, $nama);
+$stmt->execute();
 
-if ($query) {
-
+if ($stmt->affected_rows > 0) {
     // Redirect ke halaman konsultasi atau halaman lain yang sesuai
     header('location: ../login.php');
 } else {
-    echo "Terjadi kesalahan saat menyimpan data.";
+    echo "Terjadi kesalahan saat menyimpan data: " . $stmt->error;
 }
+
+$stmt->close();
+$koneksi->close();

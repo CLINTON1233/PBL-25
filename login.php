@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php } ?>
                 <button type="submit">Login</button>
                 <p>Belum Punya Akun?</p>
-                <p><a href="registrasi.php<?= isset($_GET['id']) ? '?id=' . $_GET['id'] : '' ?>">Daftar Sekarang</a></p>
+                <p><a href="konsultasi/controller/registrasi.php<?= isset($_GET['id']) ? '?id=' . $_GET['id'] : '' ?>">Daftar Sekarang</a></p>
             </form>
         </div>
         <div class="right">

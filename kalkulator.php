@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="stylekalkulator.css">
   <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
@@ -132,7 +133,8 @@
                   <option value="2011">Januari 2011 - Desember 2012</option>
                   <option value="2013">Januari 2013 - Desember 2014</option>
                   <option value="2015">Januari 2015 - Desember 2015</option>
-                  <option value="2016" selected="selected">Mulai Januari 2016</option>
+                  <option value="2015">Januari 2016 - Desember 2021</option>
+                  <option value="2016" selected="selected">Mulai Januari 2022</option>
                 </select>
               </div>
               <div class="field">
